@@ -1,0 +1,53 @@
+#dhooo {
+    float: left;
+  margin-left: 140px;
+  margin-top: 50px;
+  border: 1px solid #aaa;
+  padding: 20px;
+  background: #000;
+}
+
+#dhooo .show-level {
+  width: 100px;
+}
+#dhooo .show-level #count {
+  color: red;
+  font-size: 20px;
+}
+#dhooo .reset{
+  margin-left: 40px;
+  height: 50px;
+}
+#dhooo .reset button {
+  height: 30px
+}
+
+table {
+  border-collapse: collapse;
+  border: 0px solid #3F7581;
+  border-top: 0px solid #3F7581 ;
+}
+
+table td {
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  font-size: 5px;
+  border: 0px solid #3F7581;
+}
+.target {
+  background: url('../imgs/target.png') no-repeat;
+}
+.wall {
+  background: url('../imgs/wall.png') no-repeat;
+}
+.box {
+  background: url('../imgs/box1.png') no-repeat;
+}
+.boy {
+  background: url('../imgs/boy.png') no-repeat;
+}
+.ground {
+  background: url('../imgs/ground.png') no-repeat;
+}
+
