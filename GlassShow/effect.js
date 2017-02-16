@@ -37,4 +37,12 @@ $(document).ready(function() {
     });
 
     $("#glass").draggable();
+
+    $("#upload").bind("change", function() {
+        var file = new FileReader;
+        file.readAsDataURL(this.files[0]);
+        file.onloadend = function() {
+            $("#bg").attr("src", this.result);
+        }
+    })
 });

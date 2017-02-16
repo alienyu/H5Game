@@ -329,7 +329,7 @@
                     element.ownerDocument :
 
                     // Element is window or document
-                element.document || element );
+                    element.document || element );
                 this.window = $( this.document[ 0 ].defaultView || this.document[ 0 ].parentWindow );
             }
 
@@ -676,7 +676,7 @@
             event = $.Event( event );
             event.type = ( type === this.widgetEventPrefix ?
                 type :
-            this.widgetEventPrefix + type ).toLowerCase();
+                this.widgetEventPrefix + type ).toLowerCase();
 
             // The original event may come from any element
             // so we need to reset the target on the new event
@@ -710,7 +710,7 @@
                 method :
                 options === true || typeof options === "number" ?
                     defaultEffect :
-                options.effect || defaultEffect;
+                    options.effect || defaultEffect;
 
             options = options || {};
             if ( typeof options === "number" ) {
@@ -1319,8 +1319,8 @@
         dataSpaceStyle = "ui-effects-style",
         dataSpaceAnimated = "ui-effects-animated",
 
-    // Create a local jQuery because jQuery Color relies on it and the
-    // global may not exist with AMD and a custom build (#10199)
+        // Create a local jQuery because jQuery Color relies on it and the
+        // global may not exist with AMD and a custom build (#10199)
         jQuery = $;
 
     $.effects = {
@@ -1342,10 +1342,10 @@
         var stepHooks = "backgroundColor borderBottomColor borderLeftColor borderRightColor " +
                 "borderTopColor color columnRuleColor outlineColor textDecorationColor textEmphasisColor",
 
-        // Plusequals test for += 100 -= 100
+            // Plusequals test for += 100 -= 100
             rplusequals = /^([\-+])=\s*(\d+\.?\d*)/,
 
-        // A set of RE's that can match strings and generate color tuples.
+            // A set of RE's that can match strings and generate color tuples.
             stringParsers = [ {
                 re: /rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(?:,\s*(\d?(?:\.\d+)?)\s*)?\)/,
                 parse: function( execResult ) {
@@ -1401,7 +1401,7 @@
                 }
             } ],
 
-        // JQuery.Color( )
+            // JQuery.Color( )
             color = jQuery.Color = function( color, green, blue, alpha ) {
                 return new jQuery.Color.fn.parse( color, green, blue, alpha );
             },
@@ -1455,13 +1455,13 @@
             },
             support = color.support = {},
 
-        // Element for support tests
+            // Element for support tests
             supportElem = jQuery( "<p>" )[ 0 ],
 
-        // Colors = jQuery.Color.names
+            // Colors = jQuery.Color.names
             colors,
 
-        // Local aliases of functions called often
+            // Local aliases of functions called often
             each = jQuery.each;
 
 // Determine rgba support immediately
@@ -2283,7 +2283,7 @@
                                 padding: 0
                             } ),
 
-                    // Store the size in case width/height are defined in % - Fixes #5245
+                        // Store the size in case width/height are defined in % - Fixes #5245
                         size = {
                             width: element.width(),
                             height: element.height()
@@ -2482,11 +2482,11 @@
                 // see: http://jsfiddle.net/JZSMt/3/ https://bugs.webkit.org/show_bug.cgi?id=107380
                 // Support: Safari
                 element.css( {
-                        marginTop: element.css( "marginTop" ),
-                        marginBottom: element.css( "marginBottom" ),
-                        marginLeft: element.css( "marginLeft" ),
-                        marginRight: element.css( "marginRight" )
-                    } )
+                    marginTop: element.css( "marginTop" ),
+                    marginBottom: element.css( "marginBottom" ),
+                    marginLeft: element.css( "marginLeft" ),
+                    marginRight: element.css( "marginRight" )
+                } )
                     .outerWidth( element.outerWidth() )
                     .outerHeight( element.outerHeight() );
 
@@ -2495,20 +2495,20 @@
 
                     placeholder = $( "<" + element[ 0 ].nodeName + ">" ).insertAfter( element ).css( {
 
-                            // Convert inline to inline block to account for inline elements
-                            // that turn to inline block based on content (like img)
-                            display: /^(inline|ruby)/.test( element.css( "display" ) ) ?
-                                "inline-block" :
-                                "block",
-                            visibility: "hidden",
+                        // Convert inline to inline block to account for inline elements
+                        // that turn to inline block based on content (like img)
+                        display: /^(inline|ruby)/.test( element.css( "display" ) ) ?
+                            "inline-block" :
+                            "block",
+                        visibility: "hidden",
 
-                            // Margins need to be set to account for margin collapse
-                            marginTop: element.css( "marginTop" ),
-                            marginBottom: element.css( "marginBottom" ),
-                            marginLeft: element.css( "marginLeft" ),
-                            marginRight: element.css( "marginRight" ),
-                            "float": element.css( "float" )
-                        } )
+                        // Margins need to be set to account for margin collapse
+                        marginTop: element.css( "marginTop" ),
+                        marginBottom: element.css( "marginBottom" ),
+                        marginLeft: element.css( "marginLeft" ),
+                        marginRight: element.css( "marginRight" ),
+                        "float": element.css( "float" )
+                    } )
                         .outerWidth( element.outerWidth() )
                         .outerHeight( element.outerHeight() )
                         .addClass( "ui-effects-placeholder" );
@@ -2890,7 +2890,7 @@
             },
             Elastic: function( p ) {
                 return p === 0 || p === 1 ? p :
-                -Math.pow( 2, 8 * ( p - 1 ) ) * Math.sin( ( ( p - 1 ) * 80 - 7.5 ) * Math.PI / 15 );
+                    -Math.pow( 2, 8 * ( p - 1 ) ) * Math.sin( ( ( p - 1 ) * 80 - 7.5 ) * Math.PI / 15 );
             },
             Back: function( p ) {
                 return p * p * ( 3 * p - 2 );
@@ -2911,8 +2911,8 @@
             };
             $.easing[ "easeInOut" + name ] = function( p ) {
                 return p < 0.5 ?
-                easeIn( p * 2 ) / 2 :
-                1 - easeIn( p * -2 + 2 ) / 2;
+                    easeIn( p * 2 ) / 2 :
+                    1 - easeIn( p * -2 + 2 ) / 2;
             };
         } );
 
@@ -2998,7 +2998,7 @@
         var upAnim, downAnim, refValue,
             element = $( this ),
 
-        // Defaults:
+            // Defaults:
             mode = options.mode,
             hide = mode === "hide",
             show = mode === "show",
@@ -3006,12 +3006,12 @@
             distance = options.distance,
             times = options.times || 5,
 
-        // Number of internal animations
+            // Number of internal animations
             anims = times * 2 + ( show || hide ? 1 : 0 ),
             speed = options.duration / anims,
             easing = options.easing,
 
-        // Utility:
+            // Utility:
             ref = ( direction === "up" || direction === "down" ) ? "top" : "left",
             motion = ( direction === "up" || direction === "left" ),
             i = 0,
@@ -3207,10 +3207,10 @@
             mode = options.mode,
             show = mode === "show",
 
-        // Show and then visibility:hidden the element before calculating offset
+            // Show and then visibility:hidden the element before calculating offset
             offset = element.show().css( "visibility", "hidden" ).offset(),
 
-        // Width and height of a piece
+            // Width and height of a piece
             width = Math.ceil( element.outerWidth() / cells ),
             height = Math.ceil( element.outerHeight() / rows ),
             pieces = [];
@@ -3450,12 +3450,12 @@
         var baseline, factor, temp,
             element = $( this ),
 
-        // Copy for children
+            // Copy for children
             cProps = [ "fontSize" ],
             vProps = [ "borderTopWidth", "borderBottomWidth", "paddingTop", "paddingBottom" ],
             hProps = [ "borderLeftWidth", "borderRightWidth", "paddingLeft", "paddingRight" ],
 
-        // Set options
+            // Set options
             mode = options.mode,
             restore = mode !== "effect",
             scale = options.scale || "both",
@@ -3696,7 +3696,7 @@
             hide = mode === "hide",
             showhide = show || hide,
 
-        // Showing or hiding leaves off the "last" animation
+            // Showing or hiding leaves off the "last" animation
             anims = ( ( options.times || 5 ) * 2 ) + ( showhide ? 1 : 0 ),
             duration = options.duration / anims,
             animateTo = 0,
@@ -4615,10 +4615,10 @@
                 this.headers.eq( 0 ).attr( "tabIndex", 0 );
             } else {
                 this.active.attr( {
-                        "aria-selected": "true",
-                        "aria-expanded": "true",
-                        tabIndex: 0
-                    } )
+                    "aria-selected": "true",
+                    "aria-expanded": "true",
+                    tabIndex: 0
+                } )
                     .next()
                     .attr( {
                         "aria-hidden": "false"
@@ -4730,7 +4730,7 @@
                 // click on active header, but not collapsible
             ( clickedIsActive && !options.collapsible ) ||
 
-                // allow canceling activation
+            // allow canceling activation
             ( this._trigger( "beforeActivate", event, eventData ) === false ) ) {
                 return;
             }
@@ -4799,8 +4799,8 @@
                 } );
             } else if ( toShow.length ) {
                 this.headers.filter( function() {
-                        return parseInt( $( this ).attr( "tabIndex" ), 10 ) === 0;
-                    } )
+                    return parseInt( $( this ).attr( "tabIndex" ), 10 ) === 0;
+                } )
                     .attr( "tabIndex", -1 );
             }
 
@@ -5077,7 +5077,7 @@
 
         _destroy: function() {
             var items = this.element.find( ".ui-menu-item" )
-                .removeAttr( "role aria-disabled" ),
+                    .removeAttr( "role aria-disabled" ),
                 submenus = items.children( ".ui-menu-item-wrapper" )
                     .removeUniqueId()
                     .removeAttr( "tabIndex role aria-haspopup" );
@@ -6831,8 +6831,8 @@
         _getCreateOptions: function() {
             var disabled,
 
-            // This is to support cases like in jQuery Mobile where the base widget does have
-            // an implementation of _getCreateOptions
+                // This is to support cases like in jQuery Mobile where the base widget does have
+                // an implementation of _getCreateOptions
                 options = this._super() || {};
 
             this.isInput = this.element.is( "input" );
@@ -7410,7 +7410,7 @@
                     attr( { src: buttonImage, alt: buttonText, title: buttonText } ) :
                     $( "<button type='button'></button>" ).addClass( this._triggerClass ).
                     html( !buttonImage ? buttonText : $( "<img/>" ).attr(
-                        { src:buttonImage, alt:buttonText, title:buttonText } ) ) );
+                            { src:buttonImage, alt:buttonText, title:buttonText } ) ) );
                 input[ isRTL ? "before" : "after" ]( inst.trigger );
                 inst.trigger.on( "click", function() {
                     if ( $.datepicker._datepickerShowing && $.datepicker._lastInput === input[ 0 ] ) {
@@ -7662,7 +7662,7 @@
             if ( arguments.length === 2 && typeof name === "string" ) {
                 return ( name === "defaults" ? $.extend( {}, $.datepicker._defaults ) :
                     ( inst ? ( name === "all" ? $.extend( {}, inst.settings ) :
-                        this._get( inst, name ) ) : null ) );
+                            this._get( inst, name ) ) : null ) );
             }
 
             settings = name || {};
@@ -8295,7 +8295,7 @@
                 iValue = 0,
                 shortYearCutoffTemp = ( settings ? settings.shortYearCutoff : null ) || this._defaults.shortYearCutoff,
                 shortYearCutoff = ( typeof shortYearCutoffTemp !== "string" ? shortYearCutoffTemp :
-                new Date().getFullYear() % 100 + parseInt( shortYearCutoffTemp, 10 ) ),
+                    new Date().getFullYear() % 100 + parseInt( shortYearCutoffTemp, 10 ) ),
                 dayNamesShort = ( settings ? settings.dayNamesShort : null ) || this._defaults.dayNamesShort,
                 dayNames = ( settings ? settings.dayNames : null ) || this._defaults.dayNames,
                 monthNamesShort = ( settings ? settings.monthNamesShort : null ) || this._defaults.monthNamesShort,
@@ -8307,7 +8307,7 @@
                 literal = false,
                 date,
 
-            // Check whether a format character is doubled
+                // Check whether a format character is doubled
                 lookAhead = function( match ) {
                     var matches = ( iFormat + 1 < format.length && format.charAt( iFormat + 1 ) === match );
                     if ( matches ) {
@@ -8316,11 +8316,11 @@
                     return matches;
                 },
 
-            // Extract a number from the string value
+                // Extract a number from the string value
                 getNumber = function( match ) {
                     var isDoubled = lookAhead( match ),
                         size = ( match === "@" ? 14 : ( match === "!" ? 20 :
-                            ( match === "y" && isDoubled ? 4 : ( match === "o" ? 3 : 2 ) ) ) ),
+                                ( match === "y" && isDoubled ? 4 : ( match === "o" ? 3 : 2 ) ) ) ),
                         minSize = ( match === "y" ? size : 1 ),
                         digits = new RegExp( "^\\d{" + minSize + "," + size + "}" ),
                         num = value.substring( iValue ).match( digits );
@@ -8331,7 +8331,7 @@
                     return parseInt( num[ 0 ], 10 );
                 },
 
-            // Extract a name from the string value and convert to an index
+                // Extract a name from the string value and convert to an index
                 getName = function( match, shortNames, longNames ) {
                     var index = -1,
                         names = $.map( lookAhead( match ) ? longNames : shortNames, function( v, k ) {
@@ -8355,7 +8355,7 @@
                     }
                 },
 
-            // Confirm that a literal character matches the string value
+                // Confirm that a literal character matches the string value
                 checkLiteral = function() {
                     if ( value.charAt( iValue ) !== format.charAt( iFormat ) ) {
                         throw "Unexpected literal at position " + iValue;
@@ -8505,7 +8505,7 @@
                 monthNamesShort = ( settings ? settings.monthNamesShort : null ) || this._defaults.monthNamesShort,
                 monthNames = ( settings ? settings.monthNames : null ) || this._defaults.monthNames,
 
-            // Check whether a format character is doubled
+                // Check whether a format character is doubled
                 lookAhead = function( match ) {
                     var matches = ( iFormat + 1 < format.length && format.charAt( iFormat + 1 ) === match );
                     if ( matches ) {
@@ -8514,7 +8514,7 @@
                     return matches;
                 },
 
-            // Format a number, with leading zero if necessary
+                // Format a number, with leading zero if necessary
                 formatNumber = function( match, value, len ) {
                     var num = "" + value;
                     if ( lookAhead( match ) ) {
@@ -8525,7 +8525,7 @@
                     return num;
                 },
 
-            // Format a name, short or long as requested
+                // Format a name, short or long as requested
                 formatName = function( match, value, shortNames, longNames ) {
                     return ( lookAhead( match ) ? longNames[ value ] : shortNames[ value ] );
                 },
@@ -8560,7 +8560,7 @@
                                 break;
                             case "y":
                                 output += ( lookAhead( "y" ) ? date.getFullYear() :
-                                ( date.getFullYear() % 100 < 10 ? "0" : "" ) + date.getFullYear() % 100 );
+                                    ( date.getFullYear() % 100 < 10 ? "0" : "" ) + date.getFullYear() % 100 );
                                 break;
                             case "@":
                                 output += date.getTime();
@@ -8590,7 +8590,7 @@
                 chars = "",
                 literal = false,
 
-            // Check whether a format character is doubled
+                // Check whether a format character is doubled
                 lookAhead = function( match ) {
                     var matches = ( iFormat + 1 < format.length && format.charAt( iFormat + 1 ) === match );
                     if ( matches ) {
@@ -8711,7 +8711,7 @@
                     return new Date( year, month, day );
                 },
                 newDate = ( date == null || date === "" ? defaultDate : ( typeof date === "string" ? offsetString( date ) :
-                    ( typeof date === "number" ? ( isNaN( date ) ? defaultDate : offsetNumeric( date ) ) : new Date( date.getTime() ) ) ) );
+                        ( typeof date === "number" ? ( isNaN( date ) ? defaultDate : offsetNumeric( date ) ) : new Date( date.getTime() ) ) ) );
 
             newDate = ( newDate && newDate.toString() === "Invalid Date" ? defaultDate : newDate );
             if ( newDate ) {
@@ -8849,22 +8849,22 @@
 
             prevText = this._get( inst, "prevText" );
             prevText = ( !navigationAsDateFormat ? prevText : this.formatDate( prevText,
-                this._daylightSavingAdjust( new Date( drawYear, drawMonth - stepMonths, 1 ) ),
-                this._getFormatConfig( inst ) ) );
+                    this._daylightSavingAdjust( new Date( drawYear, drawMonth - stepMonths, 1 ) ),
+                    this._getFormatConfig( inst ) ) );
 
             prev = ( this._canAdjustMonth( inst, -1, drawYear, drawMonth ) ?
-            "<a class='ui-datepicker-prev ui-corner-all' data-handler='prev' data-event='click'" +
-            " title='" + prevText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "e" : "w" ) + "'>" + prevText + "</span></a>" :
+                "<a class='ui-datepicker-prev ui-corner-all' data-handler='prev' data-event='click'" +
+                " title='" + prevText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "e" : "w" ) + "'>" + prevText + "</span></a>" :
                 ( hideIfNoPrevNext ? "" : "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='" + prevText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "e" : "w" ) + "'>" + prevText + "</span></a>" ) );
 
             nextText = this._get( inst, "nextText" );
             nextText = ( !navigationAsDateFormat ? nextText : this.formatDate( nextText,
-                this._daylightSavingAdjust( new Date( drawYear, drawMonth + stepMonths, 1 ) ),
-                this._getFormatConfig( inst ) ) );
+                    this._daylightSavingAdjust( new Date( drawYear, drawMonth + stepMonths, 1 ) ),
+                    this._getFormatConfig( inst ) ) );
 
             next = ( this._canAdjustMonth( inst, +1, drawYear, drawMonth ) ?
-            "<a class='ui-datepicker-next ui-corner-all' data-handler='next' data-event='click'" +
-            " title='" + nextText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "w" : "e" ) + "'>" + nextText + "</span></a>" :
+                "<a class='ui-datepicker-next ui-corner-all' data-handler='next' data-event='click'" +
+                " title='" + nextText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "w" : "e" ) + "'>" + nextText + "</span></a>" :
                 ( hideIfNoPrevNext ? "" : "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='" + nextText + "'><span class='ui-icon ui-icon-circle-triangle-" + ( isRTL ? "w" : "e" ) + "'>" + nextText + "</span></a>" ) );
 
             currentText = this._get( inst, "currentText" );
@@ -8873,11 +8873,11 @@
                 this.formatDate( currentText, gotoDate, this._getFormatConfig( inst ) ) );
 
             controls = ( !inst.inline ? "<button type='button' class='ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all' data-handler='hide' data-event='click'>" +
-            this._get( inst, "closeText" ) + "</button>" : "" );
+                this._get( inst, "closeText" ) + "</button>" : "" );
 
             buttonPanel = ( showButtonPanel ) ? "<div class='ui-datepicker-buttonpane ui-widget-content'>" + ( isRTL ? controls : "" ) +
-            ( this._isInRange( inst, gotoDate ) ? "<button type='button' class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
-            ">" + currentText + "</button>" : "" ) + ( isRTL ? "" : controls ) + "</div>" : "";
+                ( this._isInRange( inst, gotoDate ) ? "<button type='button' class='ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all' data-handler='today' data-event='click'" +
+                    ">" + currentText + "</button>" : "" ) + ( isRTL ? "" : controls ) + "</div>" : "";
 
             firstDay = parseInt( this._get( inst, "firstDay" ), 10 );
             firstDay = ( isNaN( firstDay ) ? 0 : firstDay );
@@ -8939,7 +8939,7 @@
                     for ( dRow = 0; dRow < numRows; dRow++ ) { // create date picker rows
                         calender += "<tr>";
                         tbody = ( !showWeek ? "" : "<td class='ui-datepicker-week-col'>" +
-                        this._get( inst, "calculateWeek" )( printDate ) + "</td>" );
+                            this._get( inst, "calculateWeek" )( printDate ) + "</td>" );
                         for ( dow = 0; dow < 7; dow++ ) { // create date picker days
                             daySettings = ( beforeShowDay ?
                                 beforeShowDay.apply( ( inst.input ? inst.input[ 0 ] : null ), [ printDate ] ) : [ true, "" ] );
@@ -8953,19 +8953,19 @@
                                 ( defaultDate.getTime() === printDate.getTime() && defaultDate.getTime() === selectedDate.getTime() ) ?
 
                                     // or defaultDate is current printedDate and defaultDate is selectedDate
-                                " " + this._dayOverClass : "" ) + // highlight selected day
+                                    " " + this._dayOverClass : "" ) + // highlight selected day
                                 ( unselectable ? " " + this._unselectableClass + " ui-state-disabled" : "" ) +  // highlight unselectable days
                                 ( otherMonth && !showOtherMonths ? "" : " " + daySettings[ 1 ] + // highlight custom dates
-                                ( printDate.getTime() === currentDate.getTime() ? " " + this._currentClass : "" ) + // highlight selected day
-                                ( printDate.getTime() === today.getTime() ? " ui-datepicker-today" : "" ) ) + "'" + // highlight today (if different)
+                                    ( printDate.getTime() === currentDate.getTime() ? " " + this._currentClass : "" ) + // highlight selected day
+                                    ( printDate.getTime() === today.getTime() ? " ui-datepicker-today" : "" ) ) + "'" + // highlight today (if different)
                                 ( ( !otherMonth || showOtherMonths ) && daySettings[ 2 ] ? " title='" + daySettings[ 2 ].replace( /'/g, "&#39;" ) + "'" : "" ) + // cell title
                                 ( unselectable ? "" : " data-handler='selectDay' data-event='click' data-month='" + printDate.getMonth() + "' data-year='" + printDate.getFullYear() + "'" ) + ">" + // actions
                                 ( otherMonth && !showOtherMonths ? "&#xa0;" : // display for other months
                                     ( unselectable ? "<span class='ui-state-default'>" + printDate.getDate() + "</span>" : "<a class='ui-state-default" +
-                                    ( printDate.getTime() === today.getTime() ? " ui-state-highlight" : "" ) +
-                                    ( printDate.getTime() === currentDate.getTime() ? " ui-state-active" : "" ) + // highlight selected day
-                                    ( otherMonth ? " ui-priority-secondary" : "" ) + // distinguish dates from other months
-                                    "' href='#'>" + printDate.getDate() + "</a>" ) ) + "</td>"; // display selectable date
+                                        ( printDate.getTime() === today.getTime() ? " ui-state-highlight" : "" ) +
+                                        ( printDate.getTime() === currentDate.getTime() ? " ui-state-active" : "" ) + // highlight selected day
+                                        ( otherMonth ? " ui-priority-secondary" : "" ) + // distinguish dates from other months
+                                        "' href='#'>" + printDate.getDate() + "</a>" ) ) + "</td>"; // display selectable date
                             printDate.setDate( printDate.getDate() + 1 );
                             printDate = this._daylightSavingAdjust( printDate );
                         }
@@ -8977,7 +8977,7 @@
                         drawYear++;
                     }
                     calender += "</tbody></table>" + ( isMultiMonth ? "</div>" +
-                        ( ( numMonths[ 0 ] > 0 && col === numMonths[ 1 ] - 1 ) ? "<div class='ui-datepicker-row-break'></div>" : "" ) : "" );
+                            ( ( numMonths[ 0 ] > 0 && col === numMonths[ 1 ] - 1 ) ? "<div class='ui-datepicker-row-break'></div>" : "" ) : "" );
                     group += calender;
                 }
                 html += group;
@@ -9156,7 +9156,7 @@
         _getFormatConfig: function( inst ) {
             var shortYearCutoff = this._get( inst, "shortYearCutoff" );
             shortYearCutoff = ( typeof shortYearCutoff !== "string" ? shortYearCutoff :
-            new Date().getFullYear() % 100 + parseInt( shortYearCutoff, 10 ) );
+                new Date().getFullYear() % 100 + parseInt( shortYearCutoff, 10 ) );
             return { shortYearCutoff: shortYearCutoff,
                 dayNamesShort: this._get( inst, "dayNamesShort" ), dayNames: this._get( inst, "dayNames" ),
                 monthNamesShort: this._get( inst, "monthNamesShort" ), monthNames: this._get( inst, "monthNames" ) };
@@ -9170,7 +9170,7 @@
                 inst.currentYear = inst.selectedYear;
             }
             var date = ( day ? ( typeof day === "object" ? day :
-                this._daylightSavingAdjust( new Date( year, month, day ) ) ) :
+                    this._daylightSavingAdjust( new Date( year, month, day ) ) ) :
                 this._daylightSavingAdjust( new Date( inst.currentYear, inst.currentMonth, inst.currentDay ) ) );
             return this.formatDate( this._get( inst, "dateFormat" ), date, this._getFormatConfig( inst ) );
         }
@@ -9184,14 +9184,14 @@
     function datepicker_bindHover( dpDiv ) {
         var selector = "button, .ui-datepicker-prev, .ui-datepicker-next, .ui-datepicker-calendar td a";
         return dpDiv.on( "mouseout", selector, function() {
-                $( this ).removeClass( "ui-state-hover" );
-                if ( this.className.indexOf( "ui-datepicker-prev" ) !== -1 ) {
-                    $( this ).removeClass( "ui-datepicker-prev-hover" );
-                }
-                if ( this.className.indexOf( "ui-datepicker-next" ) !== -1 ) {
-                    $( this ).removeClass( "ui-datepicker-next-hover" );
-                }
-            } )
+            $( this ).removeClass( "ui-state-hover" );
+            if ( this.className.indexOf( "ui-datepicker-prev" ) !== -1 ) {
+                $( this ).removeClass( "ui-datepicker-prev-hover" );
+            }
+            if ( this.className.indexOf( "ui-datepicker-next" ) !== -1 ) {
+                $( this ).removeClass( "ui-datepicker-next-hover" );
+            }
+        } )
             .on( "mouseover", selector, datepicker_handleMouseover );
     }
 
@@ -9345,8 +9345,8 @@
             var that = this,
                 btnIsLeft = ( event.which === 1 ),
 
-            // event.target.nodeName works around a bug in IE 8 with
-            // disabled inputs (#7620)
+                // event.target.nodeName works around a bug in IE 8 with
+                // disabled inputs (#7620)
                 elIsCancel = ( typeof this.options.cancel === "string" && event.target.nodeName ?
                     $( event.target ).closest( this.options.cancel ).length : false );
             if ( !btnIsLeft || elIsCancel || !this._mouseCapture( event ) ) {
@@ -10091,10 +10091,10 @@
                     // The absolute mouse position
                     pos.top	+
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.top * mod +
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.top * mod -
                     ( ( this.cssPosition === "fixed" ?
                         -this.offset.scroll.top :
@@ -10105,10 +10105,10 @@
                     // The absolute mouse position
                     pos.left +
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.left * mod +
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.left * mod	-
                     ( ( this.cssPosition === "fixed" ?
                         -this.offset.scroll.left :
@@ -10173,21 +10173,21 @@
                     //Check for grid elements set to 0 to prevent divide by 0 error causing invalid
                     // argument errors in IE (see ticket #6950)
                     top = o.grid[ 1 ] ? this.originalPageY + Math.round( ( pageY -
-                        this.originalPageY ) / o.grid[ 1 ] ) * o.grid[ 1 ] : this.originalPageY;
+                            this.originalPageY ) / o.grid[ 1 ] ) * o.grid[ 1 ] : this.originalPageY;
                     pageY = containment ? ( ( top - this.offset.click.top >= containment[ 1 ] ||
-                    top - this.offset.click.top > containment[ 3 ] ) ?
-                        top :
-                        ( ( top - this.offset.click.top >= containment[ 1 ] ) ?
-                        top - o.grid[ 1 ] : top + o.grid[ 1 ] ) ) : top;
+                        top - this.offset.click.top > containment[ 3 ] ) ?
+                            top :
+                            ( ( top - this.offset.click.top >= containment[ 1 ] ) ?
+                                top - o.grid[ 1 ] : top + o.grid[ 1 ] ) ) : top;
 
                     left = o.grid[ 0 ] ? this.originalPageX +
-                    Math.round( ( pageX - this.originalPageX ) / o.grid[ 0 ] ) * o.grid[ 0 ] :
+                        Math.round( ( pageX - this.originalPageX ) / o.grid[ 0 ] ) * o.grid[ 0 ] :
                         this.originalPageX;
                     pageX = containment ? ( ( left - this.offset.click.left >= containment[ 0 ] ||
-                    left - this.offset.click.left > containment[ 2 ] ) ?
-                        left :
-                        ( ( left - this.offset.click.left >= containment[ 0 ] ) ?
-                        left - o.grid[ 0 ] : left + o.grid[ 0 ] ) ) : left;
+                        left - this.offset.click.left > containment[ 2 ] ) ?
+                            left :
+                            ( ( left - this.offset.click.left >= containment[ 0 ] ) ?
+                                left - o.grid[ 0 ] : left + o.grid[ 0 ] ) ) : left;
                 }
 
                 if ( o.axis === "y" ) {
@@ -10205,13 +10205,13 @@
                     // The absolute mouse position
                     pageY -
 
-                        // Click offset (relative to the element)
+                    // Click offset (relative to the element)
                     this.offset.click.top -
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.top -
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.top +
                     ( this.cssPosition === "fixed" ?
                         -this.offset.scroll.top :
@@ -10222,13 +10222,13 @@
                     // The absolute mouse position
                     pageX -
 
-                        // Click offset (relative to the element)
+                    // Click offset (relative to the element)
                     this.offset.click.left -
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.left -
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.left +
                     ( this.cssPosition === "fixed" ?
                         -this.offset.scroll.left :
@@ -10978,15 +10978,15 @@
             this.handles = o.handles ||
                 ( !$( ".ui-resizable-handle", this.element ).length ?
                     "e,s,se" : {
-                    n: ".ui-resizable-n",
-                    e: ".ui-resizable-e",
-                    s: ".ui-resizable-s",
-                    w: ".ui-resizable-w",
-                    se: ".ui-resizable-se",
-                    sw: ".ui-resizable-sw",
-                    ne: ".ui-resizable-ne",
-                    nw: ".ui-resizable-nw"
-                } );
+                        n: ".ui-resizable-n",
+                        e: ".ui-resizable-e",
+                        s: ".ui-resizable-s",
+                        w: ".ui-resizable-w",
+                        se: ".ui-resizable-se",
+                        sw: ".ui-resizable-sw",
+                        ne: ".ui-resizable-ne",
+                        nw: ".ui-resizable-nw"
+                    } );
 
             this._handles = $();
             if ( this.handles.constructor === String ) {
@@ -11113,20 +11113,20 @@
             this.position = { left: curleft, top: curtop };
 
             this.size = this._helper ? {
-                width: this.helper.width(),
-                height: this.helper.height()
-            } : {
-                width: el.width(),
-                height: el.height()
-            };
+                    width: this.helper.width(),
+                    height: this.helper.height()
+                } : {
+                    width: el.width(),
+                    height: el.height()
+                };
 
             this.originalSize = this._helper ? {
-                width: el.outerWidth(),
-                height: el.outerHeight()
-            } : {
-                width: el.width(),
-                height: el.height()
-            };
+                    width: el.outerWidth(),
+                    height: el.outerHeight()
+                } : {
+                    width: el.width(),
+                    height: el.height()
+                };
 
             this.sizeDiff = {
                 width: el.outerWidth() - el.width(),
@@ -11702,12 +11702,12 @@
 
             woset = Math.abs( that.sizeDiff.width +
                 ( that._helper ?
-                that.offset.left - cop.left :
+                    that.offset.left - cop.left :
                     ( that.offset.left - co.left ) ) );
 
             hoset = Math.abs( that.sizeDiff.height +
                 ( that._helper ?
-                that.offset.top - cop.top :
+                    that.offset.top - cop.top :
                     ( that.offset.top - co.top ) ) );
 
             if ( woset + that.size.width >= that.parentData.width ) {
@@ -12407,7 +12407,7 @@
             $.each( buttons, function( name, props ) {
                 var click, buttonOptions;
                 props = $.isFunction( props ) ?
-                { click: props, text: name } :
+                    { click: props, text: name } :
                     props;
 
                 // Default to a non-submitting button
@@ -12492,8 +12492,8 @@
                 options = this.options,
                 handles = options.resizable,
 
-            // .ui-resizable has position: relative defined in the stylesheet
-            // but dialogs have to use absolute or fixed positioning
+                // .ui-resizable has position: relative defined in the stylesheet
+                // but dialogs have to use absolute or fixed positioning
                 position = this.uiDialog.css( "position" ),
                 resizeHandles = typeof handles === "string" ?
                     handles :
@@ -12509,40 +12509,40 @@
             }
 
             this.uiDialog.resizable( {
-                    cancel: ".ui-dialog-content",
-                    containment: "document",
-                    alsoResize: this.element,
-                    maxWidth: options.maxWidth,
-                    maxHeight: options.maxHeight,
-                    minWidth: options.minWidth,
-                    minHeight: this._minHeight(),
-                    handles: resizeHandles,
-                    start: function( event, ui ) {
-                        that._addClass( $( this ), "ui-dialog-resizing" );
-                        that._blockFrames();
-                        that._trigger( "resizeStart", event, filteredUi( ui ) );
-                    },
-                    resize: function( event, ui ) {
-                        that._trigger( "resize", event, filteredUi( ui ) );
-                    },
-                    stop: function( event, ui ) {
-                        var offset = that.uiDialog.offset(),
-                            left = offset.left - that.document.scrollLeft(),
-                            top = offset.top - that.document.scrollTop();
+                cancel: ".ui-dialog-content",
+                containment: "document",
+                alsoResize: this.element,
+                maxWidth: options.maxWidth,
+                maxHeight: options.maxHeight,
+                minWidth: options.minWidth,
+                minHeight: this._minHeight(),
+                handles: resizeHandles,
+                start: function( event, ui ) {
+                    that._addClass( $( this ), "ui-dialog-resizing" );
+                    that._blockFrames();
+                    that._trigger( "resizeStart", event, filteredUi( ui ) );
+                },
+                resize: function( event, ui ) {
+                    that._trigger( "resize", event, filteredUi( ui ) );
+                },
+                stop: function( event, ui ) {
+                    var offset = that.uiDialog.offset(),
+                        left = offset.left - that.document.scrollLeft(),
+                        top = offset.top - that.document.scrollTop();
 
-                        options.height = that.uiDialog.height();
-                        options.width = that.uiDialog.width();
-                        options.position = {
-                            my: "left top",
-                            at: "left" + ( left >= 0 ? "+" : "" ) + left + " " +
-                            "top" + ( top >= 0 ? "+" : "" ) + top,
-                            of: that.window
-                        };
-                        that._removeClass( $( this ), "ui-dialog-resizing" );
-                        that._unblockFrames();
-                        that._trigger( "resizeStop", event, filteredUi( ui ) );
-                    }
-                } )
+                    options.height = that.uiDialog.height();
+                    options.width = that.uiDialog.width();
+                    options.position = {
+                        my: "left top",
+                        at: "left" + ( left >= 0 ? "+" : "" ) + left + " " +
+                        "top" + ( top >= 0 ? "+" : "" ) + top,
+                        of: that.window
+                    };
+                    that._removeClass( $( this ), "ui-dialog-resizing" );
+                    that._unblockFrames();
+                    that._trigger( "resizeStop", event, filteredUi( ui ) );
+                }
+            } )
                 .css( "position", position );
         },
 
@@ -12710,9 +12710,9 @@
             // Reset wrapper sizing
             // determine the height of all the non-content elements
             nonContentHeight = this.uiDialog.css( {
-                    height: "auto",
-                    width: options.width
-                } )
+                height: "auto",
+                width: options.width
+            } )
                 .outerHeight();
             minContentHeight = Math.max( 0, options.minHeight - nonContentHeight );
             maxContentHeight = typeof options.maxHeight === "number" ?
@@ -12900,8 +12900,8 @@
             this.isout = true;
 
             this.accept = $.isFunction( accept ) ? accept : function( d ) {
-                return d.is( accept );
-            };
+                    return d.is( accept );
+                };
 
             this.proportions = function( /* valueToWrite */ ) {
                 if ( arguments.length ) {
@@ -12952,8 +12952,8 @@
 
             if ( key === "accept" ) {
                 this.accept = $.isFunction( value ) ? value : function( d ) {
-                    return d.is( value );
-                };
+                        return d.is( value );
+                    };
             } else if ( key === "scope" ) {
                 var drop = $.ui.ddmanager.droppables[ this.options.scope ];
 
@@ -13457,7 +13457,7 @@
         _percentage: function() {
             return this.indeterminate ?
                 100 :
-            100 * ( this.options.value - this.min ) / ( this.options.max - this.min );
+                100 * ( this.options.value - this.min ) / ( this.options.max - this.min );
         },
 
         _refreshValue: function() {
@@ -14384,7 +14384,7 @@
             // we always remove classes first and add them second, otherwise if both classes have the
             // same theme class, it will be removed after we add it.
             this._removeClass( this.button, "ui-selectmenu-button-" +
-                    ( this.isOpen ? "closed" : "open" ) )
+                ( this.isOpen ? "closed" : "open" ) )
                 ._addClass( this.button, "ui-selectmenu-button-" +
                     ( this.isOpen ? "open" : "closed" ) )
                 ._toggleClass( this.menuWrap, "ui-selectmenu-open", null, this.isOpen );
@@ -14669,13 +14669,13 @@
             offset = closestHandle.offset();
             mouseOverHandle = !$( event.target ).parents().addBack().is( ".ui-slider-handle" );
             this._clickOffset = mouseOverHandle ? { left: 0, top: 0 } : {
-                left: event.pageX - offset.left - ( closestHandle.width() / 2 ),
-                top: event.pageY - offset.top -
-                ( closestHandle.height() / 2 ) -
-                ( parseInt( closestHandle.css( "borderTopWidth" ), 10 ) || 0 ) -
-                ( parseInt( closestHandle.css( "borderBottomWidth" ), 10 ) || 0 ) +
-                ( parseInt( closestHandle.css( "marginTop" ), 10 ) || 0 )
-            };
+                    left: event.pageX - offset.left - ( closestHandle.width() / 2 ),
+                    top: event.pageY - offset.top -
+                    ( closestHandle.height() / 2 ) -
+                    ( parseInt( closestHandle.css( "borderTopWidth" ), 10 ) || 0 ) -
+                    ( parseInt( closestHandle.css( "borderBottomWidth" ), 10 ) || 0 ) +
+                    ( parseInt( closestHandle.css( "marginTop" ), 10 ) || 0 )
+                };
 
             if ( !this.handles.hasClass( "ui-state-hover" ) ) {
                 this._slide( event, index, normValue );
@@ -15089,7 +15089,7 @@
                 valueMin = this._valueMin();
                 valueMax = this._valueMax();
                 valPercent = ( valueMax !== valueMin ) ?
-                ( value - valueMin ) / ( valueMax - valueMin ) * 100 :
+                    ( value - valueMin ) / ( valueMax - valueMin ) * 100 :
                     0;
                 _set[ this.orientation === "horizontal" ? "left" : "bottom" ] = valPercent + "%";
                 this.handle.stop( 1, 1 )[ animate ? "animate" : "css" ]( _set, o.animate );
@@ -16000,7 +16000,7 @@
 
             // Determine whether items are being displayed horizontally
             this.floating = this.items.length ?
-            this.options.axis === "x" || this._isFloating( this.items[ 0 ].item ) :
+                this.options.axis === "x" || this._isFloating( this.items[ 0 ].item ) :
                 false;
 
             //This has to be redone because due to the item being moved out/into the offsetParent,
@@ -16065,7 +16065,7 @@
                             element = $( "<" + nodeName + ">", that.document[ 0 ] );
 
                         that._addClass( element, "ui-sortable-placeholder",
-                                className || that.currentItem[ 0 ].className )
+                            className || that.currentItem[ 0 ].className )
                             ._removeClass( element, "ui-sortable-helper" );
 
                         if ( nodeName === "tbody" ) {
@@ -16379,10 +16379,10 @@
                     0 - this.offset.relative.top - this.offset.parent.top,
                     o.containment === "document" ?
                         this.document.width() :
-                    this.window.width() - this.helperProportions.width - this.margins.left,
+                        this.window.width() - this.helperProportions.width - this.margins.left,
                     ( o.containment === "document" ?
                             ( this.document.height() || document.body.parentNode.scrollHeight ) :
-                        this.window.height() || this.document[ 0 ].body.parentNode.scrollHeight
+                            this.window.height() || this.document[ 0 ].body.parentNode.scrollHeight
                     ) - this.helperProportions.height - this.margins.top
                 ];
             }
@@ -16429,10 +16429,10 @@
                     // The absolute mouse position
                     pos.top	+
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.top * mod +
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.top * mod -
                     ( ( this.cssPosition === "fixed" ?
                         -this.scrollParent.scrollTop() :
@@ -16443,14 +16443,14 @@
                     // The absolute mouse position
                     pos.left +
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.left * mod +
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.left * mod	-
                     ( ( this.cssPosition === "fixed" ?
                         -this.scrollParent.scrollLeft() : scrollIsRootNode ? 0 :
-                        scroll.scrollLeft() ) * mod )
+                            scroll.scrollLeft() ) * mod )
                 )
             };
 
@@ -16508,7 +16508,7 @@
                         top - this.offset.click.top <= this.containment[ 3 ] ) ?
                             top :
                             ( ( top - this.offset.click.top >= this.containment[ 1 ] ) ?
-                            top - o.grid[ 1 ] : top + o.grid[ 1 ] ) ) :
+                                top - o.grid[ 1 ] : top + o.grid[ 1 ] ) ) :
                         top;
 
                     left = this.originalPageX + Math.round( ( pageX - this.originalPageX ) /
@@ -16518,7 +16518,7 @@
                         left - this.offset.click.left <= this.containment[ 2 ] ) ?
                             left :
                             ( ( left - this.offset.click.left >= this.containment[ 0 ] ) ?
-                            left - o.grid[ 0 ] : left + o.grid[ 0 ] ) ) :
+                                left - o.grid[ 0 ] : left + o.grid[ 0 ] ) ) :
                         left;
                 }
 
@@ -16530,13 +16530,13 @@
                     // The absolute mouse position
                     pageY -
 
-                        // Click offset (relative to the element)
+                    // Click offset (relative to the element)
                     this.offset.click.top -
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.top -
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.top +
                     ( ( this.cssPosition === "fixed" ?
                         -this.scrollParent.scrollTop() :
@@ -16547,13 +16547,13 @@
                     // The absolute mouse position
                     pageX -
 
-                        // Click offset (relative to the element)
+                    // Click offset (relative to the element)
                     this.offset.click.left -
 
-                        // Only for relative positioned nodes: Relative offset from element to offset parent
+                    // Only for relative positioned nodes: Relative offset from element to offset parent
                     this.offset.relative.left -
 
-                        // The offsetParent's offset without borders (offset + border)
+                    // The offsetParent's offset without borders (offset + border)
                     this.offset.parent.left +
                     ( ( this.cssPosition === "fixed" ?
                         -this.scrollParent.scrollLeft() :
@@ -17704,8 +17704,8 @@
             this._addClass( this.tabs, "ui-tabs-tab", "ui-state-default" );
 
             this.anchors = this.tabs.map( function() {
-                    return $( "a", this )[ 0 ];
-                } )
+                return $( "a", this )[ 0 ];
+            } )
                 .attr( {
                     role: "presentation",
                     tabIndex: -1
@@ -17852,9 +17852,9 @@
                 } );
 
                 this.panels.each( function() {
-                        $( this ).height( Math.max( 0, maxHeight -
-                            $( this ).innerHeight() + $( this ).height() ) );
-                    } )
+                    $( this ).height( Math.max( 0, maxHeight -
+                        $( this ).innerHeight() + $( this ).height() ) );
+                } )
                     .css( "overflow", "auto" );
             } else if ( heightStyle === "auto" ) {
                 maxHeight = 0;
@@ -17884,16 +17884,16 @@
 
             if ( tab.hasClass( "ui-state-disabled" ) ||
 
-                    // tab is already loading
+                // tab is already loading
                 tab.hasClass( "ui-tabs-loading" ) ||
 
-                    // can't switch durning an animation
+                // can't switch durning an animation
                 this.running ||
 
-                    // click on active header, but not collapsible
+                // click on active header, but not collapsible
                 ( clickedIsActive && !options.collapsible ) ||
 
-                    // allow canceling activation
+                // allow canceling activation
                 ( this._trigger( "beforeActivate", event, eventData ) === false ) ) {
                 return;
             }
@@ -17966,8 +17966,8 @@
                 eventData.oldTab.attr( "tabIndex", -1 );
             } else if ( toShow.length ) {
                 this.tabs.filter( function() {
-                        return $( this ).attr( "tabIndex" ) === 0;
-                    } )
+                    return $( this ).attr( "tabIndex" ) === 0;
+                } )
                     .attr( "tabIndex", -1 );
             }
 
@@ -18704,3 +18704,56 @@
 
 
 }));
+
+var moveFlag = 0; // 是否移动的flag
+
+/iPad|iPhone|Android/.test( navigator.userAgent ) && (function( $ ) {
+    var proto =  $.ui.mouse.prototype,
+        _mouseInit = proto._mouseInit;
+    $.extend( proto, {
+        _mouseInit: function() {
+            this.element
+                .bind( "touchstart." + this.widgetName, $.proxy( this, "_touchStart" ) );
+            _mouseInit.apply( this, arguments );
+        },
+        _touchStart: function( event ) {
+            this.element
+                .bind( "touchmove." + this.widgetName, $.proxy( this, "_touchMove" ) )
+                .bind( "touchend." + this.widgetName, $.proxy( this, "_touchEnd" ) );
+
+            this._modifyEvent( event );
+
+            $( document ).trigger($.Event("mouseup")); //reset mouseHandled flag in ui.mouse
+            this._mouseDown( event );
+            // console.log(this);
+            //return false;
+        },
+        _touchMove: function( event ) {
+            moveFlag = 1;
+            this._modifyEvent( event );
+            this._mouseMove( event );
+
+        },
+        _touchEnd: function( event ) {
+            // 主动触发点击事件
+            if (moveFlag == 0) {
+                var evt = document.createEvent('Event');
+                evt.initEvent('click',true,true);
+                this.handleElement[0].dispatchEvent(evt);
+            };
+
+            this.element
+                .unbind( "touchmove." + this.widgetName )
+                .unbind( "touchend." + this.widgetName );
+            this._mouseUp( event );
+
+            moveFlag = 0;
+        },
+        _modifyEvent: function( event ) {
+            event.which = 1;
+            var target = event.originalEvent.targetTouches[0];
+            event.pageX = target.clientX;
+            event.pageY = target.clientY;
+        }
+    });
+})( jQuery );
