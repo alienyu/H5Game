@@ -12,9 +12,9 @@ $(document).ready(function() {
         $("#glass").attr("src", src);
     })
 
-    $("#clear").bind("click", function() {
-        $("#glass").attr("src", "")
-    });
+    // $("#clear").bind("click", function() {
+    //     $("#glass").attr("src", "")
+    // });
 
     $("#sizeW").bind("click", function() {
         $("#glass").css("transform", "scaleX(2)")
