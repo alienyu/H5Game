@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <style>
+        html,body {
+            height: 100%;
+        }
+        .content {
+            position: relative;
+            height: 80%;
+            width: 100%;
+        }
+        .content .bg {
+            width: 100%;
+        }
+        .content .glass {
+            position: absolute;
+            top:20%;
+            left: 50%;
+            margin-left: -100px;
+            width: 200px;
+            z-index: 1000;
+            height: 80px;
+        }
+        .glass_list {
+            width: 100%;
+        }
+        .glass_list img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .effect a {
+            display: inline-block;
+            width:100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #ff6900;
+            margin-right: 20px;
+            color: #fff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">这是一个眼镜展示demo</div>
+    <div class="content">
+        <img id="bg" src="bg.jpeg" class="bg" />
+        <img id="glass" class="glass" />
+    </div>
+    <div class="glass_list">
+        <img src="glass1.jpeg" />
+        <img src="glass2.jpeg" />
+        <img src="glass3.jpeg" />
+        <img src="glass4.jpeg" />
+    </div>
+    <div class="effect">
+        <a href="javascript:;" id="clear">清除眼镜</a>
+        <a href="javascript:;" id="rotateL">眼镜左旋转</a>
+        <a href="javascript:;" id="rotateR">眼镜右旋转</a>
+        <a href="javascript:;" id="sizeW">眼镜横向缩放</a>
+        <a href="javascript:;" id="sizeH">眼镜纵向缩放</a>
+        <a href="javascript:;" id="size">眼镜等比缩放</a>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="jqueryUI.js"></script>
+    <script src="effect.js"></script>
+</body>
